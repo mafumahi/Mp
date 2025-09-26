@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>জনবান্ধব এমপি পোর্টাল</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+<body class="bg-gray-50">
+
+  <!-- সমস্যা ফর্ম -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold text-gray-800 mb-4 text-center">আপনার সমস্যা আমাদের জানান</h2>
+      <form action="https://sheetdb.io/api/v1/nk01wzq01wjk3?sheet=Problems" method="POST"
+        class="bg-gray-50 p-6 rounded-lg shadow-sm max-w-2xl mx-auto">
+        <select name="problem_type" required class="w-full px-4 py-2 mb-4 border rounded-md">
+          <option value="">সমস্যার ধরন</option>
+          <option value="road">রাস্তাঘাট</option>
+          <option value="electricity">বিদ্যুৎ</option>
+          <option value="water">পানি</option>
+          <option value="education">শিক্ষা</option>
+          <option value="health">স্বাস্থ্য</option>
+          <option value="other">অন্যান্য</option>
+        </select>
+        <select name="problem_location" required class="w-full px-4 py-2 mb-4 border rounded-md">
+          <option value="">সমস্যার স্থান</option>
+          <option value="union1">বালুভরা ইউনিয়ন</option>
+          <option value="union2">বাংলাবান্ধা ইউনিয়ন</option>
+          <option value="union3">চকঘাট ইউনিয়ন</option>
+          <option value="union4">ধামইর ইউনিয়ন</option>
+          <option value="union5">পাহাড়পুর ইউনিয়ন</option>
+          <option value="municipality">নওগাঁ পৌরসভা</option>
+        </select>
+        <textarea name="problem_details" required rows="4"
+          class="w-full px-4 py-2 mb-4 border rounded-md"
+          placeholder="সমস্যার বিস্তারিত বিবরণ"></textarea>
+        <div class="flex justify-end">
+          <button type="submit"
+            class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-md">জমা দিন</button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- আইডিয়া ফর্ম -->
+  <section class="py-16 bg-gray-100">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold text-gray-800 mb-4 text-center">আপনার আইডিয়া</h2>
+      <form action="https://sheetdb.io/api/v1/nk01wzq01wjk3?sheet=Ideas" method="POST"
+        class="bg-white p-6 rounded-lg shadow-sm max-w-2xl mx-auto">
+        <input type="text" name="idea_title" required placeholder="আইডিয়ার শিরোনাম"
+          class="w-full px-4 py-2 mb-4 border rounded-md" />
+        <textarea name="idea_details" required rows="4" placeholder="আইডিয়ার বিস্তারিত"
+          class="w-full px-4 py-2 mb-4 border rounded-md"></textarea>
+        <textarea name="idea_benefit" required rows="3" placeholder="কিভাবে উপকার করবে"
+          class="w-full px-4 py-2 mb-4 border rounded-md"></textarea>
+        <div class="flex justify-end">
+          <button type="submit"
+            class="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-md">আইডিয়া জমা দিন</button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- জরিপ (Poll) ফর্ম -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold text-gray-800 mb-4 text-center">বর্তমান জরিপ</h2>
+      <form action="https://sheetdb.io/api/v1/nk01wzq01wjk3?sheet=Polls" method="POST"
+        class="bg-gray-50 p-6 rounded-lg shadow-sm max-w-2xl mx-auto">
+        <label class="block mb-2"><input type="radio" name="poll_option" value="road" required> রাস্তাঘাট</label>
+        <label class="block mb-2"><input type="radio" name="poll_option" value="health"> স্বাস্থ্যসেবা</label>
+        <label class="block mb-2"><input type="radio" name="poll_option" value="education"> শিক্ষা</label>
+        <label class="block mb-2"><input type="radio" name="poll_option" value="job"> কর্মসংস্থান</label>
+        <label class="block mb-2"><input type="radio" name="poll_option" value="utility"> বিদ্যুৎ ও পানি</label>
+        <div class="flex justify-end mt-4">
+          <button type="submit"
+            class="bg-purple-600 hover:bg-purple-700 text-white px-6 py-3 rounded-md">ভোট দিন</button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- স্বেচ্ছাসেবক ফর্ম -->
+  <section class="py-16 bg-blue-600 text-white">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold mb-4 text-center">আপনিও যুক্ত হোন</h2>
+      <form action="https://sheetdb.io/api/v1/nk01wzq01wjk3?sheet=Volunteers" method="POST"
+        class="bg-white bg-opacity-10 p-8 rounded-lg max-w-2xl mx-auto">
+        <input type="text" name="volunteer_name" required placeholder="আপনার নাম"
+          class="w-full px-4 py-2 mb-4 rounded-md" />
+        <input type="tel" name="volunteer_phone" required placeholder="মোবাইল"
+          class="w-full px-4 py-2 mb-4 rounded-md" />
+        <input type="email" name="volunteer_email" required placeholder="ইমেইল"
+          class="w-full px-4 py-2 mb-4 rounded-md" />
+        <select name="volunteer_location" required class="w-full px-4 py-2 mb-4 rounded-md">
+          <option value="">স্বেচ্ছাসেবক এলাকা নির্বাচন</option>
+          <option value="union1">বালুভরা ইউনিয়ন</option>
+          <option value="union2">বাংলাবান্ধা ইউনিয়ন</option>
+          <option value="union3">চকঘাট ইউনিয়ন</option>
+          <option value="union4">ধামইর ইউনিয়ন</option>
+          <option value="union5">পাহাড়পুর ইউনিয়ন</option>
+          <option value="municipality">নওগাঁ পৌরসভা</option>
+        </select>
+        <textarea name="volunteer_skills" required rows="3" placeholder="আপনার দক্ষতা"
+          class="w-full px-4 py-2 mb-4 rounded-md"></textarea>
+        <div class="flex justify-center">
+          <button type="submit"
+            class="bg-yellow-400 px-8 py-3 rounded-md font-bold text-lg">জমা দিন</button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- যোগাযোগ ফর্ম -->
+  <section class="py-16 bg-gray-50">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold text-gray-800 mb-4 text-center">যোগাযোগ করুন</h2>
+      <form action="https://sheetdb.io/api/v1/nk01wzq01wjk3?sheet=Contacts" method="POST"
+        class="bg-white p-6 rounded-lg shadow-sm max-w-2xl mx-auto">
+        <input type="text" name="contact_name" required placeholder="আপনার নাম"
+          class="w-full px-4 py-2 mb-4 border rounded-md" />
+        <input type="tel" name="contact_phone" required placeholder="মোবাইল"
+          class="w-full px-4 py-2 mb-4 border rounded-md" />
+        <input type="email" name="contact_email" required placeholder="ইমেইল"
+          class="w-full px-4 py-2 mb-4 border rounded-md" />
+        <input type="text" name="contact_subject" placeholder="বিষয়"
+          class="w-full px-4 py-2 mb-4 border rounded-md" />
+        <textarea name="contact_message" required rows="4" placeholder="বার্তা"
+          class="w-full px-4 py-2 mb-4 border rounded-md"></textarea>
+        <div class="flex justify-end">
+          <button type="submit"
+            class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-md">পাঠান</button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- নিউজলেটার সাবস্ক্রিপশন ফর্ম -->
+  <section class="py-12 bg-blue-600 text-white">
+    <div class="container mx-auto px-4 text-center">
+      <h2 class="text-2xl font-bold mb-4">কার্যক্রম আপডেট পেতে সাবস্ক্রাইব করুন</h2>
+      <form action="https://sheetdb.io/api/v1/nk01wzq01wjk3?sheet=Newsletter" method="POST"
+        class="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+        <input type="email" name="newsletter_email" required placeholder="আপনার ইমেইল"
+          class="flex-grow px-4 py-3 rounded-md text-gray-900" />
+        <button type="submit" class="bg-yellow-400 px-6 py-3 rounded-md font-bold">সাবস্ক্রাইব করুন</button>
+      </form>
+    </div>
+  </section>
+
+</body>
+  </html>
